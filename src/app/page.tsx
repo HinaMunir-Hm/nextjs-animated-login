@@ -21,7 +21,6 @@ export default function Home() {
   };
 
   const handleMouseUp = () => {
-    console.log(dragging, pull);
     setDragging(false);
     if (pull >= threshold) {
       setEnabled(!enabled);
