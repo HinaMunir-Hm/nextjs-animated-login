@@ -6,7 +6,7 @@ interface PullToLightProps {
   pull: number;
   dragging: boolean;
   handleMouseDown: () => void;
-  handleMouseMove: (e: React.MouseEvent) => void;
+  handleMouseMove: (e: React.MouseEvent|React.TouchEvent) => void;
   handleMouseUp: () => void;
 }
 const PullToLight = ({
@@ -34,6 +34,7 @@ const PullToLight = ({
         ></div>
         <div
           onMouseDown={handleMouseDown}
+          onTouchStart={handleMouseDown}
           className={`bg-yellow-300 hover:bg-yellow-400 p-1 rounded-full shadow-md transition-transform ${
             dragging ? "cursor-grabbing" : "cursor-grab"
           }`}
